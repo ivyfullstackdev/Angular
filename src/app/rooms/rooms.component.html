@@ -1,0 +1,32 @@
+<!-- Parent Component -->
+<app-header></app-header>
+<!-- Interpolation -->
+<p>Welcome to {{hotelName}}</p>
+
+<!-- Event Binding -->
+<div [hidden]="hideRooms">
+
+  <!-- Property Binding -->
+  Number of rooms:
+  <div [ngStyle]="{'color': rooms.availableRooms ? 'blue' : 'red'}" [innerText]="numberOfRooms"></div>
+</div>
+
+<!-- display json: -->
+<!-- {{roomList | json}} -->
+
+Available room: {{ rooms.availableRooms ?? 'No rooms'}}
+
+<div *ngIf="selectedRoom">
+  {{selectedRoom | json}}
+</div>
+
+<div>
+  <button (click)="addRoom()">Add Room</button>
+</div>
+
+<div *ngIf="rooms.availableRooms > 0" >
+  <app-rooms-list [rooms]="roomList" [title]="title"
+  (selectedRoom)="selectRoom($event)"></app-rooms-list>
+</div>
+
+<button (click)="toggle()">Toggle</button>
