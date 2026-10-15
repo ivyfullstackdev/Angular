@@ -4,12 +4,13 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { RoomsListComponent } from './rooms/rooms-list/rooms-list.component';
 import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { ContainerComponent } from "./container/container.component";
+import { EmployeeComponent } from "./employee/employee.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RoomsComponent, NgSwitch, NgSwitchCase, NgSwitchDefault, ContainerComponent],
+  imports: [RouterOutlet, RoomsComponent, NgSwitch, NgSwitchCase, NgSwitchDefault, ContainerComponent, EmployeeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
